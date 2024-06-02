@@ -6,13 +6,14 @@ const getButtonStyles = (theme: Theme, variant?: ButtonVariants) => {
   switch (variant) {
     case "primary":
       return `
-          background: ${theme.colors.primary};
+          background: ${theme.colors.buttonBackground};
           color: ${theme.colors.white};
+          border: 1px solid ${theme.colors.primary};
         `;
     case "secondary":
       return `
-          background: transparent;
-          color: ${theme.colors.primary};
+          background: ${theme.colors.accent};;
+          color: ${theme.colors.white};
           border: 1px solid ${theme.colors.primary};
         `;
     default:
@@ -23,10 +24,15 @@ const getButtonStyles = (theme: Theme, variant?: ButtonVariants) => {
 export const StyledButton = styled.button<{ variant?: ButtonVariants }>`
   padding: ${({ theme }) => theme.spacing.medium};
   font-size: ${({ theme }) => theme.typography.fontSizes.medium};
+  margin: 10px;
+  cursor: pointer;
+  color: white;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  min-width: 120px;
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.primary};
+    cursor: not-allowed;
+  }
 
   &:hover {
     opacity: 0.8;

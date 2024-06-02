@@ -49,6 +49,7 @@
   "author": "Sebastian Coteanu <sebastian.coteanu@qualitestgroup.com>",
   "license": "MIT",
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/lodash.debounce": "^4.0.9"
   }
 }
